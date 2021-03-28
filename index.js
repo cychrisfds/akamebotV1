@@ -635,7 +635,7 @@ async function starts() {
 						for (let _ of anu) {
 							sendMess(_.jid, `[ Ini Broadcast ]\n\n${body.slice(4)}`)
 						}
-						reply('Transmissão feita com sucesso)
+						reply('Transmissão feita com sucesso')
 					}
 					break
                                 case 'promote':
