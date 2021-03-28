@@ -1,91 +1,72 @@
 const help = (prefix) => {
-	return `> *Sticker Commands* <
-command : *${prefix}sticker* or *${prefix}stiker*
-desc : convert image/gif/video to sticker
-usage : reply image/gif/video, or send image/gif/video with caption\n
-command : *${prefix}sticker nobg* or *${prefix}stiker nobg*
-desc : convert image to sticker while removing the background
-usage : reply image, or send image with caption\n
-command : *${prefix}toimg*
-desc : convert sticker to image
-usage : reply sticker\n
-command : *${prefix}tsticker* or *${prefix}tstiker*
-desc : convert text to sticker
-usage : *${prefix}tsticker text in here*\n
-> *Meme Commands* <
-command : *${prefix}meme*
-desc : random meme images [english]
-usage : just send the command\n
-> *Others Commands* <
-command : *${prefix}tp*
-desc : Text / Logo maker from textpro.me
-usage : *${prefix}tp [no] [text]*\nexample : *${prefix}tp 1 YourText*
-note : *${prefix}tp list* ( for show all theme )\n
-command : *${prefix}ep*
-desc : Text / Logo maker from ephoto360.com
-usage : *${prefix}ep [no] [text]*\nexample : *${prefix}ep 1 YourText*
-note : *${prefix}ep list* ( for show all theme )\n
-command : *${prefix}tahta*
-desc : Harta Tahta .....
-usage : *${prefix}tahta [text]*\nexample : *${prefix}tahta YourText*\n
-command : *${prefix}gtts*
-desc : convert text to speech/audio
-usage : *${prefix}gtts [cc] [text]*\nexample : *${prefix}gtts ja On2-chan*\n
-command : *${prefix}loli*
-desc : random loli images
-usage : just send the command\n
-command : *${prefix}nsfwloli*
-desc : random nsfw loli images
-usage : just send the command\n
-command : *${prefix}url2img*
-desc : take web screenshots
-usage : *${prefix}url2img [tipe] [url]*\n
-command : *${prefix}simi*
-desc : your message will be replied to by simi
-usage : *${prefix}simi yourmessage*\n
-command : *${prefix}ocr*
-desc : take the text in the picture
-usage : reply image, or send image with caption\n
-command : *${prefix}wait*
-desc : search anime with image [ What Anime Is This/That ]
-usage : reply image, or send image with caption\n
-command : *${prefix}setprefix*
-desc : replace prefix
-usage : *${prefix}setprefix [text|optional]*\nexample : *${prefix}setprefix ?*
-note : This command can only be used by the bot owner\n
-> *Group Comands* <
-command : *${prefix}add*
-desc : add member into group
-usage : *${prefix}add 62813xxxxx*\n
-note : can only be used when the bot becomes admin, and the one who sends the command is admin!\n
-command : *${prefix}kick*
-desc : kick members from group
-usage : *${prefix}kick @tagmember*\n
-note : can only be used when the bot becomes admin, and the one who sends the command is admin!\n
-command : *${prefix}promote*
-desc : make the group member as group admin
-usage : *${prefix}promote @tagmember*\n
-note : can only be used when the bot becomes admin, and the one who sends the command is admin!\n
-command : *${prefix}demote*
-desc : make the group admin as group member
-usage : *${prefix}demote @tagmember*\n
-note : can only be used when the bot becomes admin, and the one who sends the command is admin!\n
-command : *${prefix}linkgroup*
-desc : take the group link
-usage : just send the command
-note : can only be used when the bot becomes admin, and the one who sends the command is admin!\n
-command : *${prefix}leave*
-desc : Make bot leave the group
-usage : just send the command
-note : Can only be used by Group admins and Bot owner\n
-command : *${prefix}tagall*
-desc : tags all group members including admins too
-usage : just send the command
-note : This command can be used if you are a group admin\n
-command : *${prefix}simih*
-desc : activate simi mode in the group
-usage : *${prefix}simih 1* to activate simi mode and *${prefix}simih 0* to deactivate simi mode
-note : This command can be used if you are a group admin\n`
+	return `ola👋, @${num.split('@')[0]} de uma olhada no meu menu🥰👉👈
+
+    🍧⚡𝐀𝐊𝐀𝐌𝐄|𝐁𝐎𝐓✨
+      💮 𝗜𝗡𝗙𝗢𝗦💮
+ ▬▬▬▬▬▬▬【☪️】▬▬▬▬▬▬▬
+ 💮DONO: 🌸፝⃟༘┼⃢ᵉᵥ𝐴𝐌፠҈͜͡卍𝑪𝒀𝐶𝐻𝑅𝐼𝑆⃝፠҈͜͡✨
+ 🪀WHATSAPP: wa.me/5581996207906
+ ⚙️VERÇAO: teste pq eu apaguei a script da bot sem querer
+ ${prefix}chris info do dono lindo
+▬▬▬▬▬▬▬【☪️】▬▬▬▬▬▬▬
+ PREFIXO:[ ! ] [ . ]
+▬▬▬▬▬▬▬【☪️】▬▬▬▬▬▬▬
+WHATSAPP DA BOT: wa.me//558185982721
+INSTA DO DONO: https://instagram.com/cychris.exe
+INSTA DA BOT: https://instagram.com/akame.suport
+▬▬▬▬▬▬▬【☪️】▬▬▬▬▬▬▬
+💮✨𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬
+🌩️✨
+
+💮✨𝐜𝐨𝐦𝐚𝐧𝐝𝐨s 𝐩𝐫𝐚 𝐟𝐢𝐠𝐮✨
+🌩️✨
+${prefix}sticker [faz figurinha]
+${prefix}stiker [faz figurinha]
+${prefix}sticker nobg 
+${prefix}stiker nobg 
+${prefix}toimg [converte figu a foto]
+${prefix}tsticker [converte texto a figu]
+${prefix}tstiker [converte texto a figu]
+
+💮✨𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐞 𝐦𝐞𝐦𝐞𝐬✨
+🌩️✨
+${prefix}meme
+
+💮✨𝐨𝐮𝐭𝐫𝐨𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬✨
+🌩️✨
+${prefix}tp [faz uma logo]
+${prefix}ep [faz uma logo]
+${prefix}tahta [faz uma logo]
+${prefix}gtts [manda um audio]
+exemplo: ${prefix}gtts pt bati o cu na parede
+${prefix}loli [manda foto de loli]
+${prefix}nsfwloli [eita eita nsfw de loli nao]
+${prefix}url2img [tira print de site}
+${prefix}simi [IA]
+${prefix}ocr
+${prefix}wait
+${prefix}setprefix [muda o prefix]
+${prefix}wame [seu link do zap]
+${prefix}playstore [busca apps na play]
+${prefix}xvideos [busca videos no xvideos]
+${prefix}playmp3 [toca musicas]
+${prefix}pinterest [procura fotos]
+${prefix}gay1 [nivel de gay]
+
+
+💮✨𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬 𝐝𝐞 𝐠𝐫𝐮𝐩𝐨✨
+🌩️✨
+${prefix}add [adiciona membros] [so marca o fdp]
+${prefix}kick [da ban nos mlk] [so marca o fdp]
+${prefix}closegc [fechar grupo]
+${prefix}opengc [abre o grupo]
+${prefix}promote [da adm pro membro]
+${prefix}demote [tira o adm]
+${prefix}linkgroup [link do grupo]
+${prefix}leave [tira a bot do grupo]
+${prefix}tagall [marca todos os membros]
+${prefix}simih [IA]
+`
 }
 
 exports.help = help
