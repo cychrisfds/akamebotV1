@@ -391,6 +391,31 @@ async function starts() {
 					prefix = args[0]
 					reply(`O prefixo foi alterado com sucesso para: ${prefix}`)
 					break
+					case 'closegc':
+					client.updatePresence(from, Presence.composing) 
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					var nomor = mek.participant
+					const close = {
+					text: `Grupo fechado pelo administrador @${nomor.split("@s.whatsapp.net")[0]}\nsekarang *apenas administrador* quem pode enviar mensagens`,
+					contextInfo: { mentionedJid: [nomor] }
+					}
+					client.groupSettingChange (from, GroupSettingChange.messageSend, true);
+					reply(close)
+					break
+				case 'opengc':
+					client.updatePresence(from, Presence.composing) 
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					open = {
+					text: `Grupo aberto pelo administrador @${sender.split("@")[0]}\nsekarang *todos os participantes* pode enviar mensagens`,
+					contextInfo: { mentionedJid: [sender] }
+					}
+					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
+					client.sendMessa
+					break
 				/*case 'loli':
 					loli.getSFWLoli(async (err, res) => {
 						if (err) return reply('❌ *ERROR* ❌')
@@ -476,6 +501,69 @@ async function starts() {
 					buff = await getBuffer(anu.result)
 					client.sendMessage(from, buff, image, {quoted: mek})
 					break
+					case 'wa.me':
+		                        case 'wame':
+                  client.updatePresence(from, Presence.composing) 
+                  options = {
+                  text: `「 *LINK WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}*\n\nSeu link do zapzap:\n\n*https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n\n*Ou*\n\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*\n\n*AKAME BOT*`,
+                  contextInfo: { mentionedJid: [sender] }
+                  }
+                  client.sendMessage(from, options, text, { quoted: mek } )
+			      break
+					case 'playstore':
+                ps = `${body.slice(11)}`
+                  anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/playstore?q=${ps}`, {method: 'get'})
+                  store = '======================\n'
+                  for (let ply of anu.result){
+                  store += `• *Nome Apk:* ${ply.app.name}\n• *ID:* ${ply.app.id}\n• *Link Apk:* ${ply.app.url}\n===================°]\n`
+                  }
+                  reply(store.trim())
+                  break
+					
+				case 'xvideos':
+              	    if (args.length < 1) return reply('Cadê o texto, mano?')
+                    anu = await fetchJson(`https://api.arugaz.my.id/api/media/xvideo/search?query=${body.slice(9)}`, {method: 'get'})
+                    teks = `===============\n`
+                    for (let b of anu.result) {
+                    teks += `• Título: ${b.title}\n• Info: ${b.info}\n• Link: ${b.link}\n===============\n`
+                    }
+                    reply(teks.trim())
+			     	await limitAdd(sender) 
+			     	              break 
+					
+					case 'playmp3':
+                reply(mess.wait)
+                play = body.slice(9)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=${ZeksApi}`, {method: 'get'})
+               if (anu.error) return reply(anu.error)
+                 infomp3 = `「 *ACHEI HEHEHE* 」\n*• Título:* ${anu.result.title}\n*• Link:* ${anu.result.source}\n*• Tamanho:* ${anu.result.size}\n\n*ESPERE NOVAMENTE ENVIANDO POR FAVOR, NÃO SPAME O CHAT*`
+                buffer = await getBuffer(anu.result.thumbnail)
+                lagu = await getBuffer(anu.result.url_audio)
+                client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+                client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
+                await limitAdd(sender) 
+                break 
+					case 'pinterest':
+                    tels = body.slice(11)
+					client.updatePresence(from, Presence.composing) 
+					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${tels}`, {method: 'get'})
+					reply(mess.wait)
+					n = JSON.parse(JSON.stringify(data));
+					nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek, caption: `*PINTEREST*\n\*Resultado da pesquisa* : *${tels}*`})
+                    await limitAdd(sender)
+					break
+					
+					case 'gay1':
+
+					gay = body.slice(13)
+		   anu = await fetchJson(`https://arugaz.herokuapp.com/api/howgay`, {method: 'get'})
+		   hasil = `Veja os dados do Gay ${gay}\n\n\nPercentagem Gay : ${anu.persen}%\nAlerta!!! : gay, mas não cego`
+		   reply(hasil)
+		   await limitAdd(sender)
+					break
+					
 				case 'tstiker':
 				case 'tsticker':
 					if (args.length < 1) return reply('Onde está o texto, hum?')
